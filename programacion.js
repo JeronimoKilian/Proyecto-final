@@ -10,3 +10,15 @@ window.onload = function(){
     console.log(e);
   })
 }
+window.onload = function(){
+  fetch("")
+  .then(function(r){
+    return r.json()
+  })
+  .then(function(data){
+    console.log(data);
+  })
+  .catch(function(e){
+    console.log(e);
+  })
+}
