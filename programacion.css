@@ -31,7 +31,7 @@ footer{
   left:58%;
 }
 .containerh3{position: relative;}
-h3{color: white;font-family: sans-serif;font-weight: bold;position: absolute;right: 50%;z-index: 1}
+h3.h3titulos{color: white;font-family: sans-serif;font-weight: bold;position: absolute;right: 50%;z-index: 1}
 section{z-index: 0}
 
 .filtro-negro{
