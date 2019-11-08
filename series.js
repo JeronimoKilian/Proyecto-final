@@ -21,11 +21,32 @@ window.onload = function(){
     console.log(e);
   })
 
+  fetch("https://api.themoviedb.org/3/tv/top_rated?api_key=310e7e56f84e1bd28bcf90582689ab22&language=en-US&page=1")
+  .then(function(r){
+    return r.json()
+  })
+  .then(function(data){
+    console.log(data);
+      var topRated = data.results;
+      var ul = document.querySelector("ul.listado-mayor-puntaje")
+      var prepath = 'https://image.tmdb.org/t/p/original'
+      for (var i = 0; i < topRated.length; i++) {
+        var li = '<li>'
+            li +=  '<img src="'+prepath+topRated[i].poster_path+'" alt="">'
+            li +=  '<div class="uk-position-center uk-panel"><h1></h1></div>'
+            li += '</li>'
+
+        ul.innerHTML += li
+      }
+  })
+  .catch(function(e){
+    console.log(e);
+  })
 
 
 
 
-//   fetch("https://api.themoviedb.org/3/tv/top_rated?api_key=310e7e56f84e1bd28bcf90582689ab22&language=en-US&page=1")
+   fetch("https://api.themoviedb.org/3/tv/top_rated?api_key=310e7e56f84e1bd28bcf90582689ab22&language=en-US&page=1")
 //   .then(function(r){
 //     return r.json()
 //   })
