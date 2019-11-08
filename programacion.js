@@ -59,3 +59,4 @@ window.onload = function(){
     console.log(e);
   })
 }
+//Parte 1 y 2 de javascript
