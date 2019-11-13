@@ -1,28 +1,51 @@
-//window.onload = function () {
+window.onload = function(){
 
-//  var query = new URLSearchParams(location.search)
+  var generosObj = new URLSearchParams(location.search);
+  var idGenero = generosObj.get('genero');
 
-//  var genreId = query.get('id')
 
-//  fetch("https://api.themoviedb.org/3/discover/tv?api_key=310e7e56f84e1bd28bcf90582689ab22&with_genres="+genreId)
-  //.then(function(r){
-  //  return r.json()
-  })
-//  .then(function(resultado){
-  //  console.log(resultado)
-  //  for (var i = 0; i < resultado.results.length; i++) {
-    //  console.log(resultado.results[i].name)
+    fetch("https://api.themoviedb.org/3/genre/tv/list?api_key=64473b4750029f7eee1095d5f01e52e7&language=en-US")
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(respuesta) {
+      for (var i = 0; i < respuesta.genres.length; i++) {
+        var listadoGeneros = document.querySelector("listado-generos");
+        listadoGeneros.innerHTML += "<li><a href='generos.html?genero=" + respuesta.genres[i].id + "'>" + respuesta.genres[i].name + "</a></li>";
+        if(respuesta.genres[i].id == idGenero){
+          // console.log('hola');
+          var h1 = document.querySelector('.genreTitle')
+          h1.innerHTML = respuesta.genres[i].name
+        }
+      }
+
+    })
+    .catch(function(e){
+      console.log(e)
+
+    })
+
+
+
+  fetch("https://api.themoviedb.org/3/discover/tv?api_key=64473b4750029f7eee1095d5f01e52e7&language=en-US&with_genres="+ idGenero)
+.then(function(r){
+  return r.json()
+})
+  .then(function(data){
+    // console.log(data)
+    var series = data.results
+    var prepath = 'https://image.tmdb.org/t/p/original/'
+    // console.log(pelis);
+    var ul = document.querySelector(".slide-series")
+    for (var i = 0; i < series.length; i++) {
+      var a = '<a href="detalle.html?id='+ series[i].id + '">'
+      a += '<li>'
+      a += '<img src="'+prepath+series[i].poster_path+'" alt="">'
+      a += '<div class="uk-position-center uk-panel"><h1>'+series[i].name+'</h1></div>'
+      a += '</li>'
+      a += '</a>'
+      ul.innerHTML += a;
     }
   })
-  //.catch(function(e){
-  //  console.log(e);
-  })
-
-  // window.alert("Error");
 
 }
-window.onload = function () {
-  fetch("https://api.themoviedb.org/3/discover/tv?api_key=310e7e56f84e1bd28bcf90582689ab22&with_genres")
-  .then(function(r){
-    return r.json()
-})

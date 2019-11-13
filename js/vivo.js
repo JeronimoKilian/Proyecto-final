@@ -23,9 +23,12 @@ window.addEventListener('load',function(){
       // tengo que recorrer el array, arrancando por el primero y termino en el ultimo.
       for (var i = 0; i < arrayDeSeriesPopulares.length; i++) {
             li = '<li>'
+            li +=   '<a href="detalle.html?idDeSerie=' +arrayDeSeriesPopulares[i].id  + '">'
             li +=  '<img src="'+prepath+ arrayDeSeriesPopulares[i].poster_path+'" alt="">'
             li +=  '<div class="uk-position-center uk-panel"><h1></h1></div>'
+            li +=   '</a>'
             li += '</li>'
+
         ul.innerHTML += li
       }
   })
