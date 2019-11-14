@@ -24,11 +24,9 @@
 
               </li>
               <li><a href="">Géneros</a><div class="uk-navbar-dropdown">
-                  <ul class="uk-nav uk-navbar-dropdown-nav">
-                      <li class="uk-active"><a href="#">Active</a></li>
-                      <li><a href="#">Item</a></li>
-                      <li><a href="#">Item</a></li>
-                  </ul>
+                <ul class="uk-nav uk-navbar-dropdown-nav listado-generos">
+
+                </ul>
                   <li><a href="#">Series</a><div class="uk-navbar-dropdown">
                       <ul class="uk-nav uk-navbar-dropdown-nav">
                           <li class="uk-active"><a href="SeriesPopulares.html">Populares</a></li>
@@ -39,9 +37,9 @@
           </ul>
       </div>
       <div class="uk-margin">
-        <form class="uk-search uk-search-default">
+        <form class="uk-search uk-search-default" action="resultados.html" method="get">
             <span uk-search-icon></span>
-            <input class="uk-search-input" type="search" placeholder="Search...">
+            <input name="busqueda" class="uk-search-input" type="search" placeholder="Search...">
         </form>
       </div>
   </nav>
