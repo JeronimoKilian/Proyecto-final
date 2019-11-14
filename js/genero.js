@@ -10,7 +10,7 @@ window.onload = function(){
     })
     .then(function(respuesta) {
       for (var i = 0; i < respuesta.genres.length; i++) {
-        var listadoGeneros = document.querySelector("listado-generos");
+        var listadoGeneros = document.querySelector(".listado-generos");
         listadoGeneros.innerHTML += "<li><a href='generos.html?genero=" + respuesta.genres[i].id + "'>" + respuesta.genres[i].name + "</a></li>";
         if(respuesta.genres[i].id == idGenero){
           // console.log('hola');
