@@ -27,8 +27,7 @@ window.addEventListener('load',function(){
     console.log(resultado.homepage)
     console.log(resultado.status)
     console.log(resultado.vote_average)
-
-
+    document.querySelector('.sinopsis').innerHTML=resultado.overview
   })
 
   fetch ("https://api.themoviedb.org/3/tv/" + idDeSerie + "/recommendations?api_key=64473b4750029f7eee1095d5f01e52e7&language=en-US&page=1" )
