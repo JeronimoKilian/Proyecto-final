@@ -20,10 +20,6 @@ window.onload = function(){
       }
 
     })
-    .catch(function(e){
-      console.log(e)
-
-    })
 
 
 
@@ -41,7 +37,7 @@ window.onload = function(){
       var a = '<a href="detalle.html?id='+ series[i].id + '">'
       a += '<li>'
       a += '<img src="'+prepath+series[i].poster_path+'" alt="">'
-      a += '<div class="uk-position-center uk-panel"><h1>'+series[i].name+'</h1></div>'
+      a += '<div class="uk-position-center uk-panel"><h1>'+'</h1></div>'
       a += '</li>'
       a += '</a>'
       ul.innerHTML += a;

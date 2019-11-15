@@ -25,7 +25,7 @@ window.addEventListener('load', function(){
 
 
       var prepath = 'https://image.tmdb.org/t/p/original'
-var ul = document.querySelector(".busqueda-contenedor")
+var ul = document.querySelector(".busqueda-contenedor ul")
             var li = '<li>'
             li +=   '<a href="detalle.html?idDeSerie=' +id + '">'
             li +=     '<img src="'+ prepath + poster+'" alt="">'

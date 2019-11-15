@@ -19,8 +19,11 @@ footer{
   display: flex;
 margin-top: 2%;
   width:100%;
-  height:100%;
+  height:20%;
   background-color: #8DA0BC;
+  margin: 0 auto;
+  padding-bottom: 0%;
+
 }
 .nombres {
   width: 45%;height:auto auto;position: absolute;
@@ -40,3 +43,4 @@ section{z-index: 0}
 
 .uk-navbar{justify-content: space-between;}
 .busqueda-contenedor{display: flex;}
+.genreTitle{color: white;}
