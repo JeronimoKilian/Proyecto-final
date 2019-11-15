@@ -34,7 +34,7 @@ window.onload = function(){
     // console.log(pelis);
     var ul = document.querySelector(".slide-series")
     for (var i = 0; i < series.length; i++) {
-      var a = '<a href="detalle.html?id='+ series[i].id + '">'
+      var a = '<a href="detalle.html?idDeSerie='+ series[i].id + '">'
       a += '<li>'
       a += '<img src="'+prepath+series[i].poster_path+'" alt="">'
       a += '<div class="uk-position-center uk-panel"><h1>'+'</h1></div>'
