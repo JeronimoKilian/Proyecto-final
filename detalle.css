@@ -1,0 +1,27 @@
+.tituloserie{
+  color: white;font-family: sans-serif;font-weight: bold;position;
+
+}
+.sinopsis{
+color: white;font-family: sans-serif;font-weight: bold;position;
+}
+.estreno{
+color: white;font-family: sans-serif;font-weight: bold;position;
+}
+.language{
+  color: white;font-family: sans-serif;font-weight: bold;position;
+}
+.generos{
+  color: white;font-family: sans-serif;font-weight: bold;position;
+
+}
+@media screen and (min-width: 600px) {
+  body {
+    font-size: 50px;
+  }
+}
+@media screen and (max-width: 600px) {
+body {
+    font-size: 30px;
+  }
+}
