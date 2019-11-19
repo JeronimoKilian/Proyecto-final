@@ -101,7 +101,7 @@ window.addEventListener('load',function(){
 //recomendaciones
 
 
-//Favoritos
+//Favoritos(selectivas)
 var recuperoStorage = localStorage.getItem("seriesfavoritas");
 
 // Si todavía no tenía gifs favoritos
@@ -114,30 +114,30 @@ if (recuperoStorage == null) {
 }
 
 var datos = new URLSearchParams(location.search);
-var seriesfavoritas = datos.get("seriesfavoritas");
+var idDeSerie = datos.get("idDeSerie");
 
-if (gifsFavoritos.includes(idGif)) {
-  document.querySelector("button").innerHTML = "QUITAR DE FAVORITOS";
+if (seriesfavoritas.includes(idDeSerie)) {
+  document.querySelector(".favorito").innerHTML = "QUITAR DE FAVORITOS";
 }
-document.querySelector("button").onclick = function() {
+document.querySelector(".favorito").onclick = function() {
 
 
   //Paso 2: Modificar la informacion
   // Si el gif ya era favorito
-  if (gifsFavoritos.includes(idGif)) {
+  if (seriesfavoritas.includes(idDeSerie)) {
     // Lo quito
-    var index = gifsFavoritos.indexOf(idGif);
-    gifsFavoritos.splice(index, 1);
-    document.querySelector("button").innerHTML = "AGREGAR FAVORITO";
+    var index = seriesfavoritas.indexOf(idDeSerie);
+    seriesfavoritas.splice(index, 1);
+    document.querySelector(".favorito").innerHTML = "AGREGAR FAVORITO";
   } else {
     //Lo agrego
-    gifsFavoritos.push(idGif);
-    document.querySelector("button").innerHTML = "QUITAR DE FAVORITOS";
+    seriesfavoritas.push(idDeSerie);
+    document.querySelector(".favorito").innerHTML = "QUITAR DE FAVORITOS";
   }
 
 
   //Paso 3: Escribir en storage
-  var infoParaStorage = JSON.stringify(gifsFavoritos);
-  localStorage.setItem("gifsFavoritos", infoParaStorage);
+  var infoParaStorage = JSON.stringify(seriesfavoritas);
+  localStorage.setItem("seriesfavoritas", infoParaStorage);
   console.log(localStorage);
 }
