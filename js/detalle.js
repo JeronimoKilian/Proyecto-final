@@ -91,7 +91,7 @@ window.addEventListener('load',function(){
     for (var i = 0; i < datos.results.length; i++) {
     var key = datos.results[i].key
     var youtube = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + key + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-    var trailer = document.querySelector(".trailer").innerHTML += youtube
+    var trailer = document.querySelector(".trailerr").innerHTML += youtube
     console.log(youtube);
   }
   })
