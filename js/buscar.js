@@ -12,7 +12,10 @@ window.addEventListener('load', function(){
     return respuesta.json();
   })
   .then(function(informacion) {
-    console.log(informacion.results);
+    if (informacion.results.length== 0) { alert("lo siento tu busqueda no existe")
+
+    }else {
+console.log(informacion.results.length);
     var arrayDeSeries =informacion.results
 
     for (var i=0; i < arrayDeSeries.length; i++) {
@@ -35,6 +38,8 @@ console.log(ul);
             li +=   '</a>'
             li += '</li>'
             ul.innerHTML += li
+
+              }
 
 
 
