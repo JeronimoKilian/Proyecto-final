@@ -59,3 +59,28 @@ window.addEventListener("load", function() {
 //   }
 //
 // })
+
+var theSelect = document.querySelector("select");
+var allTheOptions = theSelect.options;
+console.log (allTheOptions);
+
+
+
+
+fetch ("https://api.themoviedb.org/3/discover/tv?api_key=64473b4750029f7eee1095d5f01e52e7&<<api_key>>&sort_by=vote_average.asc&first_air_date_year=12345&with_genres=234567&without_genres=34567&include_null_first_air_dates=false")
+function validacion() {
+  if () {
+    alert('[ERROR] Debes escribir algo en los campos');
+    return false;
+  }
+  else if () {
+    alert('[ERROR] Debes escribir algo en los campos');
+    return false;
+  }
+  else if () {
+    alert('[ERROR] Debes escribir algo en los campos');
+    return false;
+  }
+
+  return true;
+}
