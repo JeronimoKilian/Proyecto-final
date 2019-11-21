@@ -18,9 +18,26 @@ console.log(recuperoStorage);
       .then(function(response) {
         return response.json();
       })
-      .then(function(gif) {
+      .then(function(serie) {
 
-        document.querySelector("ul").innerHTML += "<li><h3><a href=favoritos.html?idGif=" + gif.data.id + ">" + gif.data.title + "</a></h3><img src=" + gif.data.images.original.url + "></li>";
+          console.log(serie);
+          // var laSerie = '<div>'
+          var prepath = 'https://image.tmdb.org/t/p/original'
+          //  laSerie += '<a href="detalle.html?idDeSerie='+'">'
+          // laSerie   +=     '<img src="'+prepath+laSerie.poster_path+'" alt="">'
+          // laSerie   +=     '</a> </div>'
+
+
+
+
+        var ul = document.querySelector(".uk-slider-items")
+          var li = '<li>'
+          li +=   '<a href="favoritos.html?idDeSerie=' +serie.id + '">'
+          li +=     '<img src="'+ prepath + serie.poster_path+'" alt="">'
+          li +=     '<div class="uk-position-center uk-panel"><h1></h1></div>'
+          li +=   '</a>'
+          li += '</li>'
+          ul.innerHTML += li
       })
   }
 }

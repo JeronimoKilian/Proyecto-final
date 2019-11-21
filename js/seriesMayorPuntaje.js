@@ -30,6 +30,7 @@ window.addEventListener('load',function(){
             li += '</li>'
         ul.innerHTML += li
       }
+      
   })
   .catch(function(e){
     alert("Lo sentimos, hubo un error. Por favor, vuelve a intentarlo nuevamente en unos segundos.")

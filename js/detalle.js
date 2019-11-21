@@ -2,6 +2,7 @@ window.addEventListener('load',function(){
 
   var urlSearchParams  = (new URL(document.location)).searchParams
   var idDeSerie = urlSearchParams.get('idDeSerie')
+
   console.log(idDeSerie);
   fetch("https://api.themoviedb.org/3/tv/" + idDeSerie + "?api_key=64473b4750029f7eee1095d5f01e52e7&language=en-US")
   .then(function(response) {
@@ -99,7 +100,23 @@ window.addEventListener('load',function(){
 
 })
 //recomendaciones
-
+var idDeSerie3 = urlSearchParams.get('idDeSerie')
+fetch("https://api.themoviedb.org/3/tv/" + idDeSerie3 + "/recommendations?api_key=64473b4750029f7eee1095d5f01e52e7&language=en-US&page=1")
+.then(function(response) {
+  return response.json();
+})
+.then(function(data){
+  var recommendaciones = data.results;
+  var prepath = 'https://image.tmdb.org/t/p/original/'
+  var ul = document.querySelector(".recomendaciones")
+  for (var i = 0; i < recommendaciones.length; i++) {
+    var a = '<a href="detalle.html?id='+ recommendaciones[i].id + '">'
+    a += '<li>'
+    a += '<img src="'+prepath+recommendaciones[i].poster_path+'" alt="">'
+    a += '<div class="uk-position-center uk-panel"><h1>'+recommendaciones[i].name.toUpperCase()+'</h1></div>'
+      a += '</li>'
+    a += '</a>'
+    ul.innerHTML += a;
 
 //Favoritos(selectivas)
 var recuperoStorage = localStorage.getItem("seriesfavoritas");
@@ -140,4 +157,6 @@ document.querySelector(".favorito").onclick = function() {
   var infoParaStorage = JSON.stringify(seriesfavoritas);
   localStorage.setItem("seriesfavoritas", infoParaStorage);
   console.log(localStorage);
-}
+ }
+ }
+})

@@ -1,8 +1,9 @@
 window.onload = function(){
 
   var generosObj = new URLSearchParams(location.search);
-  var idGenero = generosObj.get('genero');
 
+  var idGenero = generosObj.get('genero');
+//var generosObj
 
     fetch("https://api.themoviedb.org/3/genre/tv/list?api_key=64473b4750029f7eee1095d5f01e52e7&language=en-US")
     .then(function(response) {
@@ -20,7 +21,7 @@ window.onload = function(){
       }
 
     })
-
+//The addition assignment operator (+=) adds a value to a variable.
 
 
   fetch("https://api.themoviedb.org/3/discover/tv?api_key=64473b4750029f7eee1095d5f01e52e7&language=en-US&with_genres="+ idGenero)
