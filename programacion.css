@@ -17,7 +17,7 @@ form{
 footer{
   position: relative;
   display: flex;
-margin-top: 2%;
+margin-top: 0%;
   width:100%;
   height:20%;
   background-color: #8DA0BC;
@@ -44,3 +44,15 @@ section{z-index: 0}
 .uk-navbar{justify-content: space-between;}
 .busqueda-contenedor{display: flex;}
 .genreTitle{color: white;}
+@media screen and (min-width: 600px) {
+   body{
+    font-size: 50px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+body {
+    font-size: 30px;
+  }
+}
+.BIENVENIDA{color: white; font-style: oblique;position: absolute;left: 40%;top: 10%;font-size: 100%; z-index: 2}

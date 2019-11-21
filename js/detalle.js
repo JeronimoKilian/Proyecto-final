@@ -27,6 +27,22 @@ window.addEventListener('load',function(){
     console.log(resultado.homepage)
     console.log(resultado.status)
     console.log(resultado.vote_average)
+    var li = ''
+    var prepath = 'https://image.tmdb.org/t/p/original'
+    var ul = document.querySelector(".poster").src = prepath + resultado.poster_path
+
+      li += '<img src="'+prepath+ resultado.poster_path+ ' alt="">'
+      console.log(li);
+      document.querySelector(".tituloserie").innerHTML=resultado.name
+      document.querySelector('.sinopsis').innerHTML=resultado.overview
+      document.querySelector('.estreno').innerHTML=resultado.first_air_date
+      document.querySelector('.language').innerHTML=resultado.original_language
+      for (var i = 0; i < resultado.genres.length; i++) {
+        document.querySelector(".generos ul").innerHTML+= "<li>" + resultado.genres[i].name + "</li>"
+
+      }
+
+
 
 
   })
@@ -75,7 +91,7 @@ window.addEventListener('load',function(){
     for (var i = 0; i < datos.results.length; i++) {
     var key = datos.results[i].key
     var youtube = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + key + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-    var trailer = document.querySelector(".trailer").innerHTML += youtube
+    var trailer = document.querySelector(".trailerr").innerHTML += youtube
     console.log(youtube);
   }
   })
@@ -83,3 +99,45 @@ window.addEventListener('load',function(){
 
 })
 //recomendaciones
+
+
+//Favoritos(selectivas)
+var recuperoStorage = localStorage.getItem("seriesfavoritas");
+
+// Si todavía no tenía gifs favoritos
+if (recuperoStorage == null) {
+  // Creo una lista vacia
+  seriesfavoritas = [];
+} else {
+  // Descomprimo el TEXTO que tenia en storage en el array que necesito trabajar
+  seriesfavoritas = JSON.parse(recuperoStorage);
+}
+
+var datos = new URLSearchParams(location.search);
+var idDeSerie = datos.get("idDeSerie");
+
+if (seriesfavoritas.includes(idDeSerie)) {
+  document.querySelector(".favorito").innerHTML = "QUITAR DE FAVORITOS";
+}
+document.querySelector(".favorito").onclick = function() {
+
+
+  //Paso 2: Modificar la informacion
+  // Si el gif ya era favorito
+  if (seriesfavoritas.includes(idDeSerie)) {
+    // Lo quito
+    var index = seriesfavoritas.indexOf(idDeSerie);
+    seriesfavoritas.splice(index, 1);
+    document.querySelector(".favorito").innerHTML = "AGREGAR FAVORITO";
+  } else {
+    //Lo agrego
+    seriesfavoritas.push(idDeSerie);
+    document.querySelector(".favorito").innerHTML = "QUITAR DE FAVORITOS";
+  }
+
+
+  //Paso 3: Escribir en storage
+  var infoParaStorage = JSON.stringify(seriesfavoritas);
+  localStorage.setItem("seriesfavoritas", infoParaStorage);
+  console.log(localStorage);
+}

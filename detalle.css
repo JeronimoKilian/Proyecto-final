@@ -1,0 +1,35 @@
+.tituloserie{
+  color: white;font-family: sans-serif; font-size: 100%; font-weight: lighter;
+
+}
+.sinopsis{
+color: white;font-family: sans-serif; font-size: 60%
+}
+.estreno{
+color: white;font-family: sans-serif;
+}
+.language{
+  font-size: 100%; color: red; text-decoration: underline; font-weight: 600;;
+}
+.generos{
+font-size: 100%; color: red; text-decoration: underline; font-weight: 600;;
+
+}
+.poster{width: 20%;}
+@media screen and (min-width: 600px) {
+  body {
+    font-size: 50px;
+  }
+}
+@media screen and (max-width: 600px) {
+body {
+    font-size: 30px;
+  }
+}
+.detallesdelapeli{font-size: 100%; color: red; text-decoration: underline; font-weight: 600;}
+
+.ull{color: white;text-decoration: none;}
+
+.language{color: white;}
+
+.favorito{position: relative; left: 50%; width: 20%; height: 50%}

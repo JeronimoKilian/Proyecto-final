@@ -10,7 +10,7 @@ window.addEventListener('load',function(){
       // objeto_respuesta es un objeto
       // el objeto tiene un atributo llamado results, que es un array
       // el array tiene en cada posicion un objeto (serie)
-      var arrayDeSeriesPopulares = objeto_respuesta.results;
+      var arrayDeVivo = objeto_respuesta.results;
       //capturo del HTML el UL para insertar como LI cada serie.
       var ul = document.querySelector("ul.listado-series-vivo")
       var li = ''
@@ -21,10 +21,10 @@ window.addEventListener('load',function(){
 
       // tengo que acceder a cada elemnto del array, que es un objeto (serie).
       // tengo que recorrer el array, arrancando por el primero y termino en el ultimo.
-      for (var i = 0; i < arrayDeSeriesPopulares.length; i++) {
+      for (var i = 0; i < arrayDeVivo.length; i++) {
             li = '<li>'
-            li +=   '<a href="detalle.html?idDeSerie=' +arrayDeSeriesPopulares[i].id  + '">'
-            li +=  '<img src="'+prepath+ arrayDeSeriesPopulares[i].poster_path+'" alt="">'
+            li +=   '<a href="detalle.html?idDeSerie=' +arrayDeVivo[i].id  + '">'
+            li +=  '<img src="'+prepath+ arrayDeVivo[i].poster_path+'" alt="">'
             li +=  '<div class="uk-position-center uk-panel"><h1></h1></div>'
             li +=   '</a>'
             li += '</li>'
