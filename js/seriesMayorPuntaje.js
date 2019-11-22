@@ -15,6 +15,7 @@ window.addEventListener('load',function(){
       var ul = document.querySelector("ul.listado-mayor-puntaje")
       var li = ''
       var prepath = 'https://image.tmdb.org/t/p/original'
+      //para el poster
 
 // arrayDeSeriesPopulares[x]
 // i++ === i = i + 1
@@ -30,7 +31,7 @@ window.addEventListener('load',function(){
             li += '</li>'
         ul.innerHTML += li
       }
-      
+
   })
   .catch(function(e){
     alert("Lo sentimos, hubo un error. Por favor, vuelve a intentarlo nuevamente en unos segundos.")
