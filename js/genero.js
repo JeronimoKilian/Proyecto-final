@@ -3,6 +3,7 @@ window.onload = function(){
   var generosObj = new URLSearchParams(location.search);
 
   var idGenero = generosObj.get('genero');
+  //getpedir info de un recurso especifico
 //var generosObj
 //json es un formato de intercambio de datos
 // fetch es un pedido asincronico,esta basado en promesas que en algun momento me va responder .
@@ -34,7 +35,7 @@ if(respuesta.genres[i].id == idGenero){
 //console.log('hola');
   var h1 = document.querySelector('.genreTitle') //para agarrar algo del html
 h1.innerHTML = respuesta.genres[i].name // replaza el  contenido de una etiqueta HTML
-////console.log(h1)//lista  genero
+////console.log(h1)//lista  genero nombre de los generos
         }  }  })
 //The addition assignment operator (+=) adds a value to a variable.
 
