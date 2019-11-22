@@ -18,6 +18,16 @@ return response.json();
     .then(function(respuesta) {
       //el cual hara lo que le pidamos con la respuesta obtenida en formato json
         //2)recibe un calleback, de ahi se ejecuta una funcion(respuesta)
+      for (var i = 0; i < respuesta.genres.length; i++) {
+        var listadoGeneros = document.querySelector(".listado-generos");
+        listadoGeneros.innerHTML += "<li><a href='genero.html?genero=" + respuesta.genres[i].id + "'>" + respuesta.genres[i].name + "</a></li>";
+        if(respuesta.genres[i].id == idGenero){
+
+          // console.log('hola');
+          var h1 = document.querySelector('.genreTitle')
+          h1.innerHTML = respuesta.genres[i].name
+        }
+      }
 
 
 //1)inicio ciclo var: 2)limite de repeticion, mientras se cumpla, el ciclo se repite,;dice en cuanto se incrementa con cada ciclo
