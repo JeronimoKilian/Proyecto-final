@@ -1,9 +1,9 @@
 window.onload = function(){
 
   var generosObj = new URLSearchParams(location.search);
-
+//te busca en url
   var idGenero = generosObj.get('genero');
-  //getpedir info de un recurso especifico
+  //get pedir info de un recurso especifico
 //var generosObj
 //json es un formato de intercambio de datos
 // fetch es un pedido asincronico,esta basado en promesas que en algun momento me va responder .
@@ -51,7 +51,10 @@ h1.innerHTML = respuesta.genres[i].name // replaza el  contenido de una etiqueta
 
 //tenemos la lista de generos pero sin contenido, sin peliculas que tenga
 //caracteristicas definidas para el genero
-  fetch("https://api.themoviedb.org/3/discover/tv?api_key=64473b4750029f7eee1095d5f01e52e7&language=en-US&with_genres="+ idGenero)
+
+
+
+   fetch("https://api.themoviedb.org/3/discover/tv?api_key=64473b4750029f7eee1095d5f01e52e7&language=en-US&with_genres="+ idGenero)
 .then(function(r){
 ////recibe Un callback. este callback es una función que recibe como argumento otra función (response) y la ejecuta.en formato json
   return r.json()
