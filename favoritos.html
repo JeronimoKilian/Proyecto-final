@@ -23,24 +23,73 @@
 
 
               </li>
-              <li><a>Géneros</a><div class="uk-navbar-dropdown">
-                  <ul class="uk-nav uk-navbar-dropdown-nav listado-generos">
 
-                  </ul>
+              <li><a href=>Géneros</a><div class="uk-navbar-dropdown">
+                <ul class="uk-nav uk-navbar-dropdown-nav listado-generos">
+
+                </ul>
                   <li><a href="#">Series</a><div class="uk-navbar-dropdown">
-                      <ul class="uk-nav uk-navbar-dropdown-nav listado-series">
+                      <ul class="uk-nav uk-navbar-dropdown-nav">
                           <li class="uk-active"><a href="SeriesPopulares.html">Populares</a></li>
                           <li><a href="MayorPuntaje.html">Mayor puntaje</a></li>
                           <li><a href="Vivo.html">Vivo</a></li>
 
-              </div></li>
+              </div>
+            </li>
+            <li>
+              <button class="uk-button uk-button-default uk-button-small" id='busqueda-avanzada'>Busqueda avanzada</button>
+            </li>
+            <li>
+              <form class="uk-search uk-search-default " action="resultados.html" method="get" uk-grid>
+                <span uk-search-icon style="padding:19px; height:50px;"></span>
+                <input style='margin-left: 20px; font-size: 1.4vw;' name="busqueda" class="uk-search-input" type="search" placeholder="Buscar...">
+              </form>
+            </li>
+            <li>
+              <!-- FORMULARIO DE BUSQUEDA AVANZADA-->
+
+            <form class="uk-search uk-search-default " action="resultados.html" method="get" uk-grid id='form-avanzado'>
+              <div class = 'uk-grid-small' uk-grid style='margin-left:20px; width: 45vw; height: 180px;'>
+                <div class="uk-width-1-4@s buscAvanzada"  style="display:none; width:140px; height: 80px;box-sizing: border-box;">
+                  <label>Genero a incluir </label>
+                  <select class="campoGenero" style="width: 140px;" name="generoIncluir" >
+                    <option value=""> </option>
+                  </select>
+                </div>
+                <div class="uk-width-1-4@s buscAvanzada"  style="display:none; width: 150px; height: 80px; box-sizing: border-box;">
+                  <label>Genero a excluir</label>
+                  <select class="campoGeneroExcluir" style="width: 140px;"name="generoExcluir" >
+                    <option value=""> </option>
+                  </select>                    </div>
+                  <div class="uk-width-1-4@s buscAvanzada"  style="display:none; width: 150px; height: 80px;
+    box-sizing: border-box;">
+                    <label>Orden</label>
+                    <select class="Orden" style="width: 140px;" name="order" >
+                      <option value=""> </option>
+                      <option value="popularity.desc">Popularidad descendente </option>
+                      <option value="popularity.asc"> Popularidad ascendente </option>
+                      <option value="first_air_date.asc"> Orden de estreno ascendente </option>
+                      <option value="first_air_date.desc"> Orden de estreno descendente</option>
+                      <option value="vote_average.asc"> Mas premiada </option>
+                      <option value="vote_average.desc"> Menos premiada </option>
+                    </select>
+                  </div>
+                  <div class="uk-width-1-4@s buscAvanzada"  style="display:none; width: 140px; height: 80px;
+    box-sizing: border-box;">
+                    <label> Año de estreno</label>
+                    <input  type="number" name="fecha" class='Anoestreno'>
+                  </div>
+                  <br>
+                  <br>
+                  <div class="uk-width-1-4@s buscAvanzada"  style="display:none">
+  <button class="uk-button uk-button-default uk-button-small" style="height: 30px; padding-left: 15px; margin-top: 50px;" >Buscar</button>
+                  </div>
+                </div>
+              </form>
+            </li>
           </ul>
-      </div>
-      <div class="uk-margin">
-        <form class="uk-search uk-search-default" action="resultados.html" method="get">
-            <span uk-search-icon></span>
-            <input name="busqueda" class="uk-search-input" type="search" placeholder="Search...">
-        </form>
+
+
       </div>
   </nav>
 </header>
